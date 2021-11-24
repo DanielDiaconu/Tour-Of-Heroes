@@ -1,0 +1,12 @@
+.hero-detail {
+  background: #eee;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.hero-detail input {
+  border: none;
+  padding: 5px 20px;
+  border-radius: 20px;
+  outline: 1px solid rgb(13 110 253 / 25%);
+}
