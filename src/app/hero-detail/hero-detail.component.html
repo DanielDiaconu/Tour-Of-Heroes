@@ -1,6 +1,10 @@
 <div *ngIf="hero" class="hero-detail">
-  <h2>{{ hero.name | uppercase }} Details</h2>
-  <!-- <div><span>id: </span>{{ hero.id }}</div> -->
+  <div class="d-flex align-items-center justify-content-between">
+    <h2>{{ hero.name | uppercase }} Details</h2>
+    <app-hero-overall-rating
+      [overallRating]="hero.powerStats"
+    ></app-hero-overall-rating>
+  </div>
   <div>
     <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
   </div>

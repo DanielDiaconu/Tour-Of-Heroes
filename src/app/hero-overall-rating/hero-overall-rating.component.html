@@ -1,0 +1,13 @@
+<div>
+  Overall Rating :
+  <span
+    [ngClass]="{
+      lowRating: rating < 11,
+      mediumRating: rating >= 11 && rating < 21,
+      highRating: rating >= 21 && rating < 31,
+      godLike: rating >= 31
+    }"
+  >
+    {{ rating }}</span
+  >
+</div>

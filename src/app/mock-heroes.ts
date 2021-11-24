@@ -25,10 +25,10 @@ export const HEROES: Hero[] = [
     id: 13,
     name: 'Bombasto',
     powerStats: {
-      combat: 6,
-      speed: 6,
-      strength: 6,
-      intelligence: 9,
+      combat: 2,
+      speed: 2,
+      strength: 1,
+      intelligence: 1,
     },
   },
   {
@@ -45,7 +45,7 @@ export const HEROES: Hero[] = [
     id: 15,
     name: 'Magneta',
     powerStats: {
-      combat: 8,
+      combat: 3,
       speed: 3,
       strength: 10,
       intelligence: 3,
@@ -56,7 +56,7 @@ export const HEROES: Hero[] = [
     name: 'RubberMan',
     powerStats: {
       combat: 3,
-      speed: 8,
+      speed: 7,
       strength: 8,
       intelligence: 4,
     },
@@ -85,9 +85,9 @@ export const HEROES: Hero[] = [
     id: 19,
     name: 'Magma',
     powerStats: {
-      combat: 7,
-      speed: 5,
-      strength: 3,
+      combat: 9,
+      speed: 9,
+      strength: 9,
       intelligence: 9,
     },
   },
