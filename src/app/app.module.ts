@@ -8,6 +8,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroPowerStatsComponent } from './hero-power-stats/hero-power-stats.component';
 import { CommonModule } from '@angular/common';
 import { HeroOverallRatingComponent } from './hero-overall-rating/hero-overall-rating.component';
+import { HeroesSortComponentComponent } from './heroes-sort-component/heroes-sort-component.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HeroOverallRatingComponent } from './hero-overall-rating/hero-overall-r
     HeroDetailComponent,
     HeroPowerStatsComponent,
     HeroOverallRatingComponent,
+    HeroesSortComponentComponent,
   ],
   imports: [BrowserModule, FormsModule, CommonModule],
   providers: [],
