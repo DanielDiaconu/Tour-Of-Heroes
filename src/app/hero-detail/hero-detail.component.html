@@ -1,12 +1,17 @@
 <div *ngIf="hero" class="hero-detail">
   <div class="d-flex align-items-center justify-content-between">
     <h2>{{ hero.name | uppercase }} Details</h2>
-    <app-hero-overall-rating
-      [overallRating]="hero.powerStats"
-    ></app-hero-overall-rating>
+    <app-hero-overall-rating></app-hero-overall-rating>
   </div>
   <div>
     <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
   </div>
-  <app-hero-power-stats [selectedHero]="hero"></app-hero-power-stats>
+  <app-hero-power-stats
+    (update)="updateHeroPowerStats($event)"
+    [selectedHero]="hero"
+  ></app-hero-power-stats>
+  <!-- <app-hero-power-stats
+    (update)="hero.powerStats = $event"
+    [selectedHero]="hero"
+  ></app-hero-power-stats> -->
 </div>

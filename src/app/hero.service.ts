@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, merge, Observable, of, tap } from 'rxjs';
 import { Hero } from 'src/core/interfaces/hero.interface';
+import { PowerStats } from 'src/core/interfaces/powerStats.interface';
 import { HEROES } from './mock-heroes';
 
 @Injectable({
@@ -8,6 +9,16 @@ import { HEROES } from './mock-heroes';
 })
 export class HeroService {
   heroes$ = new BehaviorSubject<Hero[]>([]);
+  selectedHero$ = new BehaviorSubject<Hero | null>(null);
+  initialPowerStats$ = new BehaviorSubject<PowerStats | null>(null);
+  updatedPowerStats$ = new BehaviorSubject<PowerStats | null>(null);
+  heroSelection$ = this.selectedHero$
+    .asObservable()
+    .pipe(
+      tap((selectedHero) =>
+        this.initialPowerStats$.next(selectedHero?.powerStats as PowerStats)
+      )
+    );
 
   getHeroes(): Observable<Hero[]> {
     return this.heroes$.asObservable();
@@ -19,5 +30,6 @@ export class HeroService {
 
   constructor() {
     this.setHeroes(HEROES);
+    this.heroSelection$.subscribe();
   }
 }

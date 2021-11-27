@@ -22,17 +22,20 @@ export class HeroesComponent implements OnInit {
   ngOnInit(): void {
     this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
     this.heroSortService.sortHeroes$.subscribe((sort: HeroesSortType) => {
-      console.log(sort);
       if (sort === HeroesSortType.ASCENDING) {
         this.heroes.sort((a, b) => a.id - b.id);
       } else if (sort === HeroesSortType.DESCENDING) {
         this.heroes.sort((a, b) => b.id - a.id);
-        console.log(this.heroes);
       }
     });
   }
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    this.heroService.selectedHero$.next(hero);
+  }
+
+  hideComponent(): void {
+    this.selectedHero = undefined;
   }
 }

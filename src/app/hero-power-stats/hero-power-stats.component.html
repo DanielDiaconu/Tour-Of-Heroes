@@ -13,7 +13,7 @@
       Combat: <span> {{ selectedHero?.powerStats?.combat }} </span>
     </li>
   </ul>
-  <div class="d-flex">
+  <div class="d-flex" (input)="broadcastChanges()">
     <input
       type="number"
       [(ngModel)]="selectedHero.powerStats.strength"
