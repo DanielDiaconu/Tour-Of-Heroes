@@ -9,6 +9,8 @@ import { HeroPowerStatsComponent } from './hero-power-stats/hero-power-stats.com
 import { CommonModule } from '@angular/common';
 import { HeroOverallRatingComponent } from './hero-overall-rating/hero-overall-rating.component';
 import { HeroesSortComponentComponent } from './heroes-sort-component/heroes-sort-component.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,9 @@ import { HeroesSortComponentComponent } from './heroes-sort-component/heroes-sor
     HeroPowerStatsComponent,
     HeroOverallRatingComponent,
     HeroesSortComponentComponent,
+    DashboardComponent,
   ],
-  imports: [BrowserModule, FormsModule, CommonModule],
+  imports: [BrowserModule, FormsModule, CommonModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

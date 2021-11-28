@@ -6,12 +6,10 @@
   <div>
     <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
   </div>
-  <app-hero-power-stats
-    (update)="updateHeroPowerStats($event)"
-    [selectedHero]="hero"
-  ></app-hero-power-stats>
+  <app-hero-power-stats></app-hero-power-stats>
   <!-- <app-hero-power-stats
     (update)="hero.powerStats = $event"
     [selectedHero]="hero"
   ></app-hero-power-stats> -->
+  <button (click)="goBack()">go back</button>
 </div>

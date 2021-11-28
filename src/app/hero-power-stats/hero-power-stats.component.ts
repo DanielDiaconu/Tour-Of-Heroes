@@ -9,18 +9,13 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./hero-power-stats.component.css'],
 })
 export class HeroPowerStatsComponent implements OnInit {
-  @Input() selectedHero?: Hero;
-  @Output() update: EventEmitter<PowerStats> = new EventEmitter();
+  powerStats$ = this.heroService.initialPowerStats$.asObservable();
 
   constructor(private heroService: HeroService) {}
 
   ngOnInit(): void {}
 
-  broadcastChanges(): void {
-    // this.update.emit(this.selectedHero?.powerStats);
-    // console.log('updated', this.selectedHero?.powerStats);
-    this.heroService.updatedPowerStats$.next(
-      this.selectedHero?.powerStats as PowerStats
-    );
+  broadcastChanges(updatedPowerStats: PowerStats): void {
+    this.heroService.updatedPowerStats$.next(updatedPowerStats);
   }
 }
